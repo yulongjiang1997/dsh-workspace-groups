@@ -1,0 +1,3 @@
+- insert:
+    - id: workspace-groups
+      name: '@local/dsh-workspace-groups'
