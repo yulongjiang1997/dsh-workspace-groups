@@ -1,0 +1,36 @@
+{
+  "name": "@local/dsh-workspace-groups",
+  "version": "1.5.1",
+  "private": true,
+  "type": "module",
+  "description": "Workspace groups for the sidebar: create, rename, delete groups and drag workspaces or free sessions between them.",
+  "scripts": {
+    "test": "node test/smoke.cjs && node test/host.test.cjs"
+  },
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-workspace",
+        "@deepseek-ai/dsh-client-ui-sidebar"
+      ]
+    }
+  }
+}
